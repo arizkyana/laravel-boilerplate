@@ -71,7 +71,8 @@ class UsersController extends MyController
             'role' => 'required',
             'password' => 'required|min:8',
             'confirm_password' => 'required|min:8|same:password',
-            'nik' => 'required'
+            'jenis_kelamin' => 'required',
+            'nik' => 'required|unique:users,nik'
         ]);
 
         if ($validator->fails()) {
@@ -87,6 +88,7 @@ class UsersController extends MyController
         $user->password = bcrypt($request->input('password'));
         $user->role_id = $request->input('role');
         $user->nik = $request->input('nik');
+        $user->jenis_kelamin = $request->input('jenis_kelamin');
 
         $user->save();
 
@@ -159,7 +161,7 @@ class UsersController extends MyController
             'role' => 'required',
             'password' => 'required|min:8',
             'confirm_password' => 'required|min:8|same:password',
-            'nik' => 'required'
+            'jenis_kelamin' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -169,13 +171,17 @@ class UsersController extends MyController
                 ->with($request->input());
         }
 
-        $_user = $user->find($request->input('id'));
+        $_user = User::find($request->input('id'));
 
         $_user->name = $request->input('name');
         $_user->email = $request->input('email') ? $request->input('email') : $_user->email;
         $_user->password = bcrypt($request->input('password'));
         $_user->role_id = $request->input('role');
         $_user->nik = $request->input('nik');
+        $_user->jenis_kelamin = $request->input('jenis_kelamin');
+
+        // status membership (is_active)
+        $_user->is_active = $request->input('is_active') ? true : false;
 
         $_user->save();
 

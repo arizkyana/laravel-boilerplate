@@ -68,7 +68,7 @@
                 {{--detail informasi--}}
                 <fieldset>
                     <legend>Detail Informasi</legend>
-                    <div class="form-group {{ $errors->has('nik') ? ' nik' : '' }}">
+                    <div class="form-group {{ $errors->has('nik') ? 'has-error' : '' }}">
                         <div class="row">
                             <label for="nik" class="col-md-3">NIK <span
                                         class="text-danger">*</span></label>
@@ -77,6 +77,29 @@
                                 @if ($errors->has('nik'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('nik') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group {{ $errors->has('jenis_kelamin') ? 'has-error' : '' }}">
+                        <div class="row">
+                            <label for="nik" class="col-md-3">Jenis Kelamin <span
+                                        class="text-danger">*</span></label>
+                            <div class="col-md-9">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="jenis_kelamin" value="1"/> Laki - laki
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="jenis_kelamin" value="0"/> Perempuan
+                                    </label>
+                                </div>
+                                @if ($errors->has('jenis_kelamin'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('jenis_kelamin') }}</strong>
                                     </span>
                                 @endif
                             </div>

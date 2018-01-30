@@ -76,25 +76,7 @@ module.exports = __webpack_require__(181);
 /***/ 181:
 /***/ (function(module, exports) {
 
-/**
- * Created by agungrizkyana on 10/21/17.
- */
-var jadwal = {};
-
-$(document).ready(function () {
-
-    jadwal = {
-        el: $("#calendar-jadwal-monitoring"),
-        evt: {},
-        init: function init() {
-            var self = this;
-
-            self.el.fullCalendar();
-        }
-    };
-
-    jadwal.init();
-});
+        throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'D:\\xampp\\htdocs\\laravel-boilerplate\\resources\\assets\\js\\dinkes\\jadwal\\index.js'\n    at Error (native)");
 
 /***/ })
 

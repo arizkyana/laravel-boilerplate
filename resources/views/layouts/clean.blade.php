@@ -30,13 +30,10 @@
                             class="navbar-toggle collapsed" type="button">
                         <i class="fa fa-reorder"></i>
                     </button>
-                    <div style="padding: 15px;">
-                        <img alt="image" class="" style="height: 45px; width: 45px;"
-                             src="{{ asset('images/logo-bekasi.jpg') }}"/> Kota Bekasi
-                    </div>
+
 
                 </div>
-                <ul class="nav navbar-top-links navbar-right" style="line-height: 3.2">
+                <ul class="nav navbar-top-links navbar-right" style="">
                     @guest
 
                         <li>

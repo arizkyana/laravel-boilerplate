@@ -76,25 +76,7 @@ module.exports = __webpack_require__(175);
 /***/ 175:
 /***/ (function(module, exports) {
 
-/**
- * Created by agungrizkyana on 10/21/17.
- */
-var table = {};
-
-$(document).ready(function () {
-
-    table = {
-        el: $("#table-laporan-jumantik"),
-        evt: {},
-        init: function init() {
-            var self = this;
-
-            self.el.dataTable();
-        }
-    };
-
-    table.init();
-});
+        throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'D:\\xampp\\htdocs\\laravel-boilerplate\\resources\\assets\\js\\puskesmas\\laporan\\index.js'\n    at Error (native)");
 
 /***/ })
 

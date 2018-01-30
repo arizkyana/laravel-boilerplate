@@ -5,7 +5,6 @@
         <div>
             <div>
 
-                <img src="{{ asset('images/logo-bekasi.png') }}" alt="logo-bekasi"/>
 
             </div>
 
@@ -35,7 +34,7 @@
                 <p class="text-muted text-center">
                     <small>Belum Punya Akun?</small>
                 </p>
-                <a class="btn btn-sm btn-white btn-block" href="{{ route('registrasi') }}">Daftar Akun Jumantik</a>
+                <a class="btn btn-sm btn-white btn-block" href="{{ route('registrasi') }}">Daftar Akun</a>
             </form>
             <p class="m-t">
                 <small>{{ config('app.name', 'Laravel') }} &copy; 2018</small>

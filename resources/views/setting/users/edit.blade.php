@@ -5,7 +5,8 @@
         <form action="{{ action('Setting\UsersController@update', ['id' => $users->id]) }}" method="post">
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>Edit User</h5>
+                    <h5>Detail User </h5>
+
                 </div>
                 <div class="ibox-content">
                     {{ csrf_field() }}
@@ -74,15 +75,43 @@
 
                     <fieldset>
                         <legend>Detail Informasi</legend>
-                        <div class="form-group {{ $errors->has('nik') ? ' nik' : '' }}">
+                        <div class="form-group {{ $errors->has('nik') ? 'has-error' : '' }}">
                             <div class="row">
                                 <label for="nik" class="col-md-3">NIK <span
                                             class="text-danger">*</span></label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="nik" value="{{ $users->nik }}" required/>
+                                    <input readonly type="text" class="form-control" name="nik"
+                                           value="{{ $users->nik }}" required/>
                                     @if ($errors->has('nik'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('nik') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group {{ $errors->has('jenis_kelamin') ? 'has-error' : '' }}">
+                            <div class="row">
+                                <label for="nik" class="col-md-3">Jenis Kelamin <span
+                                            class="text-danger">*</span></label>
+                                <div class="col-md-9">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="jenis_kelamin"
+                                                   value="1" {{ $users->jenis_kelamin === 1 ? 'checked' : '' }} /> Laki
+                                            - laki
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="jenis_kelamin"
+                                                   value="0" {{ $users->jenis_kelamin === 0 ? 'checked' : '' }} />
+                                            Perempuan
+                                        </label>
+                                    </div>
+                                    @if ($errors->has('jenis_kelamin'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('jenis_kelamin') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -93,6 +122,7 @@
 
                     <fieldset>
                         <legend>Authentication</legend>
+
                         <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
                             <div class="row">
                                 <label for="password" class="col-md-3">Password <span
@@ -106,6 +136,7 @@
                                     @endif
                                 </div>
                             </div>
+
                         </div>
                         <div class="form-group {{ $errors->has('confirm_password') ? ' has-error' : '' }}">
                             <div class="row">
@@ -118,17 +149,30 @@
                                         <strong>{{ $errors->first('confirm_password') }}</strong>
                                     </span>
                                     @endif
+                                    <p>
+                                        Please type your latest password or new password
+                                    </p>
                                 </div>
                             </div>
+
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>Client API</legend>
                         <div class="form-group">
                             <div class="row">
+                                <label for="generate_api_client" class="col-md-3">&nbsp;</label>
+                                <div class="col-md-9">
+                                    <p>
+                                        Generate secret token for access from API
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <label for="client_name" class="col-md-3">Client Name</label>
                                 <div class="col-md-9">
-                                    <input type="text" name="client_name" id="client_scope" class="form-control" value="{{ $apiClient->name }}" />
+                                    <input type="text" name="client_name" id="client_scope" class="form-control"
+                                           value="{{ $apiClient->name ? $apiClient->name : $users->email . '-' . date('YmdHis') }}"/>
                                 </div>
                             </div>
                         </div>
@@ -150,11 +194,31 @@
                         </div>
 
                     </fieldset>
+                    <fieldset>
+                        <legend>Membership</legend>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="membership" class="col-md-3">&nbsp;</label>
+                                <div class="col-md-9">
+                                    Membership status from {{ $users->email }}
+                                    <div class="checkbox">
 
+                                        <input type="checkbox" class="js-switch" name="is_active"
+                                               {{ $users->is_active === 1 ? 'checked' : '' }} value="1"/> Is Active ?
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
                 </div>
-                <div class="ibox-footer text-right">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                    <a href="{{ route('users') }}" class="btn btn-default">Batal</a>
+                <div class="ibox-footer no-overflow">
+
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <a href="{{ route('users') }}" class="btn btn-default">Batal</a>
+                    </div>
+
                 </div>
             </div>
         </form>

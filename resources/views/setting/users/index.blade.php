@@ -38,7 +38,7 @@
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $user->name }}</td>
                         <td>
-                            <a href="{{ route('users/edit', $user)  }}" class="text-primary">
+                            <a href="{{ route('users/edit', $user)  }}" class="text-danger">
                                 {{ $user->email }}
                             </a>
 

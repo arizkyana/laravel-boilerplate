@@ -17453,9 +17453,9 @@ function getNotificationToday() {
     });
 }
 
-getNotificationToday();
+// getNotificationToday();
 
-setInterval(getNotificationToday, 5000);
+// setInterval(getNotificationToday, 5000);
 
 /***/ }),
 /* 132 */
