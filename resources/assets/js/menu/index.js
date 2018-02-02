@@ -1,6 +1,6 @@
 
-
 let table = {};
+let parents;
 $(document).ready(function(){
     table = {
         el: $("#table-menu"),
@@ -15,4 +15,7 @@ $(document).ready(function(){
     };
 
     table.init();
+
+    // alert('tes');
+    $('select[name=parent]').select2();
 });

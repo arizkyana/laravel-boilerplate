@@ -159,6 +159,9 @@
         {{--/admin--}}
         @endguest
 
+        {{--plugins--}}
+        <script src="{{ mix('js/themes/plugins/switchery/switchery.js') }}"></script>
+        {{--/plugins--}}
 
         <script src="{{ mix('js/manifest.js') }}"></script>
         <script src="{{ mix('js/vendor.js') }}"></script>

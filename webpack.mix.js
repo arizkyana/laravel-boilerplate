@@ -35,12 +35,15 @@ mix.js([
     'resources/assets/js/themes/plugins/datapicker/bootstrap-datepicker.js',
     'resources/assets/js/themes/plugins/select2/select2.full.min.js',
     'resources/assets/js/themes/plugins/sweetalert/sweetalert.min.js',
-    'resources/assets/js/themes/plugins/switchery/switchery.js',
     'resources/assets/js/themes/plugins/clockpicker/clockpicker.js',
     'resources/assets/js/app.js'
 ], 'public/js/bundle.js');
 
 mix.extract(['jquery']);
+
+mix.copy([
+    'resources/assets/js/themes/plugins/switchery/switchery.js'
+], 'public/js/themes/plugins/switchery/switchery.js');
 
 mix.js([
     'resources/assets/js/users/create.js',

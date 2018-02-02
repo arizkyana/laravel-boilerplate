@@ -11,6 +11,8 @@ use Validator;
 class MenuController extends Controller
 {
 
+    private $js = 'menu.js';
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -28,7 +30,7 @@ class MenuController extends Controller
 
         return view('setting/menu/index')->with([
             'menus' => $menus,
-            'js' => 'menu.js',
+            'js' => $this->js,
             'title' => 'Menu'
         ]);
     }
@@ -43,7 +45,8 @@ class MenuController extends Controller
         $parents = Menu::all();
         return view('setting/menu/create')->with([
             'parents' => $parents,
-            'title' => 'Buat Menu'
+            'title' => 'Buat Menu',
+            'js' => $this->js
         ]);
     }
 
