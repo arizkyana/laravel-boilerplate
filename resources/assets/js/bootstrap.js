@@ -1,4 +1,5 @@
 window._ = require('lodash');
+window.$ = $ = window.jQuery = require('./themes/jquery-3.1.1.min');
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -7,7 +8,7 @@ window._ = require('lodash');
  */
 
 try {
-
+    console.log('Apps is Running ...')
 
 } catch (e) {
 }

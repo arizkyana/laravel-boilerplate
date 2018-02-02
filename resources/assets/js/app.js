@@ -1,7 +1,13 @@
+var moment = require('moment');
+var Highcharts = require('highcharts');
+
 try {
-    window.moment = moment = require('moment');
 
-    window.Highcharts = Highcharts = require('highcharts');
+    window.moment = moment;
+    window.Highcharts = Highcharts;
 
-    require('./bootstrap')
-}catch(e){}
+
+    require('./bootstrap');
+} catch (e) {
+    console.log(e);
+}

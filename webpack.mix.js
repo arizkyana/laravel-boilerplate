@@ -12,17 +12,41 @@ let mix = require('laravel-mix');
  |
  */
 
-mix
-// themes assset js
+mix.autoload({
+    jquery: ['$', 'window.jQuery', 'jquery', 'window.$', 'window.jquery', 'jQuery']
+});
+mix.js([
+    'resources/assets/js/themes/jquery-3.1.1.min.js',
+    'resources/assets/js/themes/bootstrap.js',
+    'resources/assets/js/themes/plugins/metisMenu/jquery.metisMenu.js',
+    'resources/assets/js/themes/plugins/slimscroll/jquery.slimscroll.min.js',
+    'resources/assets/js/themes/plugins/flot/jquery.flot.js',
+    'resources/assets/js/themes/plugins/flot/jquery.flot.tooltip.min.js',
+    'resources/assets/js/themes/plugins/flot/jquery.flot.spline.js',
+    'resources/assets/js/themes/plugins/flot/jquery.flot.resize.js',
+    'resources/assets/js/themes/plugins/flot/jquery.flot.pie.js',
+    'resources/assets/js/themes/plugins/peity/jquery.peity.min.js',
+    'resources/assets/js/themes/inspinia.js',
+    'resources/assets/js/themes/plugins/pace/pace.min.js',
+    'resources/assets/js/themes/plugins/jquery-ui/jquery-ui.min.js',
+    'resources/assets/js/themes/plugins/sparkline/jquery.sparkline.min.js',
+    'resources/assets/js/themes/plugins/toastr/toastr.min.js',
+    'resources/assets/js/themes/plugins/dataTables/datatables.min.js',
+    'resources/assets/js/themes/plugins/datapicker/bootstrap-datepicker.js',
+    'resources/assets/js/themes/plugins/select2/select2.full.min.js',
+    'resources/assets/js/themes/plugins/sweetalert/sweetalert.min.js',
+    'resources/assets/js/themes/plugins/switchery/switchery.js',
+    'resources/assets/js/themes/plugins/clockpicker/clockpicker.js',
+    'resources/assets/js/app.js'
+], 'public/js/bundle.js');
 
-    .js(['resources/assets/js/app.js'], 'public/js')
-    .js(['resources/assets/js/socket.js'], 'public/js/socket.js')
+mix.extract(['jquery']);
 
-    .js([
-        'resources/assets/js/users/create.js',
-        'resources/assets/js/users/edit.js',
-        'resources/assets/js/users/index.js',
-    ], 'public/js/users.js')
+mix.js([
+    'resources/assets/js/users/create.js',
+    'resources/assets/js/users/edit.js',
+    'resources/assets/js/users/index.js',
+], 'public/js/users.js')
     .js([
         'resources/assets/js/apiClient/create.js',
         'resources/assets/js/apiClient/edit.js',
@@ -56,6 +80,10 @@ mix
 
     .js([
         'resources/assets/js/registrasi/index.js',
-    ], 'public/js/registrasi.js')
+    ], 'public/js/registrasi.js');
 
-    .sass('resources/assets/sass/app.scss', 'public/css');
+
+
+mix.sass('resources/assets/sass/app.scss', 'public/css');
+
+mix.version();

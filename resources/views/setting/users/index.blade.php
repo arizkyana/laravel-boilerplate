@@ -44,7 +44,7 @@
 
                         </td>
 
-                        <td>{{ $user->role->name }}</td>
+                        <td>{{ isset($user->role->name) ? $user->role->name : '' }}</td>
                         <td>
 
                             <form id="delete-{{$user->id}}"

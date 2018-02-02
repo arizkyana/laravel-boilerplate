@@ -1,140 +1,9 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-    /******/
-    return __webpack_require__(__webpack_require__.s = 172);
-/******/ })
-/************************************************************************/
-/******/ ({
+webpackJsonp([2],{
 
-    /***/ 172:
+/***/ "./resources/assets/js/notification/setup/create.js":
 /***/ (function(module, exports, __webpack_require__) {
 
-        __webpack_require__(173);
-        __webpack_require__(174);
-        module.exports = __webpack_require__(175);
-
-
-/***/ }),
-
-    /***/ 173:
-/***/ (function(module, exports) {
-
-var _dataTable;
-var table, kecamatan;
-window.notifikasi = function () {
-
-    function init() {
-        initTable();
-    }
-
-    function initTable() {
-        table = {
-            el: $("#table-setup"),
-            evt: {},
-            init: function init() {
-                var self = this;
-
-                _dataTable = self.el.DataTable();
-            }
-        };
-
-        table.init();
-    }
-
-    return {
-        init: init
-    };
-}();
-
-$(document).ready(function () {
-    window.notifikasi.init();
-});
-
-window.remove = function (id) {
-    event.preventDefault();
-
-    swal({
-        title: "Apakah Anda Yakin?",
-        text: "Notifikasi yang sudah di hapus tidak dapat di kembalikan!",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Ya, Hapus!",
-        cancelButtonText: 'Batal',
-        closeOnConfirm: false,
-        html: false
-    }, function () {
-        document.getElementById('delete-' + id).submit();
-        swal("Berhasil!", "Notifikasi sudah dihapus.", "success");
-    });
-};
-
-/***/ }),
-
-    /***/ 174:
-/***/ (function(module, exports) {
-
-var kecamatan, kelurahan, role;
+/* WEBPACK VAR INJECTION */(function($) {var kecamatan, kelurahan, role;
 (function () {
 
     kelurahan = {
@@ -187,13 +56,70 @@ var kecamatan, kelurahan, role;
     kecamatan.init();
     role.init();
 })();
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
-    /***/ 175:
-/***/ (function(module, exports) {
+/***/ "./resources/assets/js/notification/setup/index.js":
+/***/ (function(module, exports, __webpack_require__) {
 
-var _dataTable;
+/* WEBPACK VAR INJECTION */(function($) {var _dataTable;
+var table, kecamatan;
+window.notifikasi = function () {
+
+    function init() {
+        initTable();
+    }
+
+    function initTable() {
+        table = {
+            el: $("#table-setup"),
+            evt: {},
+            init: function init() {
+                var self = this;
+
+                _dataTable = self.el.DataTable();
+            }
+        };
+
+        table.init();
+    }
+
+    return {
+        init: init
+    };
+}();
+
+$(document).ready(function () {
+    window.notifikasi.init();
+});
+
+window.remove = function (id) {
+    event.preventDefault();
+
+    swal({
+        title: "Apakah Anda Yakin?",
+        text: "Notifikasi yang sudah di hapus tidak dapat di kembalikan!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Ya, Hapus!",
+        cancelButtonText: 'Batal',
+        closeOnConfirm: false,
+        html: false
+    }, function () {
+        document.getElementById('delete-' + id).submit();
+        swal("Berhasil!", "Notifikasi sudah dihapus.", "success");
+    });
+};
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./resources/assets/js/notification/setup/show.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {var _dataTable;
 var table, kecamatan;
 window.dinkes = function () {
 
@@ -223,7 +149,18 @@ window.dinkes = function () {
 $(document).ready(function () {
     window.dinkes.init();
 });
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ 7:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__("./resources/assets/js/notification/setup/index.js");
+__webpack_require__("./resources/assets/js/notification/setup/create.js");
+module.exports = __webpack_require__("./resources/assets/js/notification/setup/show.js");
+
 
 /***/ })
 
-/******/ });
+},[7]);

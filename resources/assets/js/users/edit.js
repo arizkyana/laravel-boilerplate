@@ -4,6 +4,9 @@ var form = {
     }
 };
 
+
+
+
 $(document).ready(function(){
 
     var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));

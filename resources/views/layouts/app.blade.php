@@ -160,70 +160,9 @@
         @endguest
 
 
-        <script src="{{ asset('js/themes/jquery-3.1.1.min.js') }}"></script>
-        <script src="{{ asset('js/themes/bootstrap.js') }}"></script>
-        <script src="{{ asset('js/themes/plugins/metisMenu/jquery.metisMenu.js') }}"></script>
-        <script src="{{ asset('js/themes/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
-
-        <!-- Flot -->
-        <script src="{{ asset('js/themes/plugins/flot/jquery.flot.js') }}"></script>
-        <script src="{{ asset('js/themes/plugins/flot/jquery.flot.tooltip.min.js') }}"></script>
-        <script src="{{ asset('js/themes/plugins/flot/jquery.flot.spline.js') }}"></script>
-        <script src="{{ asset('js/themes/plugins/flot/jquery.flot.resize.js') }}"></script>
-        <script src="{{ asset('js/themes/plugins/flot/jquery.flot.pie.js') }}"></script>
-
-        <!-- Peity -->
-        <script src="{{ asset('js/themes/plugins/peity/jquery.peity.min.js') }}"></script>
-
-
-        <!-- Custom and plugin javascript -->
-        <script src="{{ asset('js/themes/inspinia.js') }}"></script>
-        <script src="{{ asset('js/themes/plugins/pace/pace.min.js') }}"></script>
-
-        <!-- jQuery UI -->
-        <script src="{{ asset('js/themes/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-
-        <!-- GITTER -->
-        <script src="{{ asset('js/themes/plugins/gritter/jquery.gritter.min.js') }}"></script>
-
-        <!-- Sparkline -->
-        <script src="{{ asset('js/themes/plugins/sparkline/jquery.sparkline.min.js') }}"></script>
-
-
-        <!-- Toastr -->
-        <script src="{{ asset('js/themes/plugins/toastr/toastr.min.js') }}"></script>
-
-        {{--Datatable--}}
-        <script src="{{ asset('js/themes/plugins/dataTables/datatables.min.js') }}"></script>
-        <script src="{{ asset('js/themes/plugins/datapicker/bootstrap-datepicker.js') }}"></script>
-
-        {{--select 2--}}
-        <script src="{{ asset('js/themes/plugins/select2/select2.full.min.js')  }}"></script>
-        <!-- Scripts -->
-
-        {{--sweetalert--}}
-        <script src="{{ asset('js/themes/plugins/sweetalert/sweetalert.min.js') }}"></script>
-        {{--/sweetalert--}}
-
-        {{--Switchery--}}
-        <script src="{{ asset('js/themes/plugins/switchery/switchery.js') }}"></script>
-
-        {{--Clockpicker--}}
-        <script src="{{ asset('js/themes/plugins/clockpicker/clockpicker.js') }}"></script>
-
-        {{--Ladda--}}
-        <script src="{{ asset('js/themes/plugins/ladda/spin.min.js') }}"></script>
-        <script src="{{ asset('js/themes/plugins/ladda/ladda.min.js') }}"></script>
-        <script src="{{ asset('js/themes/plugins/ladda/ladda.jquery.min.js') }}"></script>
-
-        <script src="{{ asset('js/app.js') }}"></script>
-
-        {{--plugins themes js--}}
-        @if (isset($plugins_js))
-            @foreach ($plugins_js as $js)
-                <script src="{{ asset('js/themes/plugins/' . $js) }}"></script>
-            @endforeach
-        @endif
+        <script src="{{ mix('js/manifest.js') }}"></script>
+        <script src="{{ mix('js/vendor.js') }}"></script>
+        <script src="{{ mix('js/bundle.js')  }}"></script>
 
         {{--gmaps required--}}
         @if (isset($gmaps) and $gmaps)
@@ -265,7 +204,7 @@
         </script>
 
         @if (isset($js))
-            <script src="{{ asset('js/' . $js) }}"></script>
+            <script src="{{ mix('js/' . $js) }}"></script>
         @endif
 
 
