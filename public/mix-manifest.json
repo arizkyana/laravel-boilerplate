@@ -12,5 +12,9 @@
     "/js/dashboard.js": "/js/dashboard.js?id=9a4d614b1352df9d5631",
     "/js/activity.js": "/js/activity.js?id=89a648763daa2777ea4f",
     "/js/manifest.js": "/js/manifest.js?id=e5bc017918620aee45a6",
-    "/js/themes/plugins/switchery/switchery.js": "/js/themes/plugins/switchery/switchery.js?id=9b950d2e8b99dca4b801"
+    "/js/themes/plugins/switchery/switchery.js": "/js/themes/plugins/switchery/switchery.js?id=9b950d2e8b99dca4b801",
+    "/canvas/css/store.css": "/canvas/css/store.css?id=f6c6523eb95d56066b3c",
+    "/canvas/js/jquery.js": "/canvas/js/jquery.js?id=cdce6651c76bcdd9ed88",
+    "/canvas/js/plugins.js": "/canvas/js/plugins.js?id=47b728079da0a8899120",
+    "/canvas/js/functions.js": "/canvas/js/functions.js?id=dd6a8522eb35edb959a7"
 }

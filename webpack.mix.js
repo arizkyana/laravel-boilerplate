@@ -86,6 +86,28 @@ mix.js([
     ], 'public/js/registrasi.js');
 
 
+mix.styles([
+    'resources/assets/canvas/css/bootstrap.css',
+    'resources/assets/canvas/style.css',
+    'resources/assets/canvas/css/dark.css',
+    'resources/assets/canvas/css/font-icons.css',
+    'resources/assets/canvas/css/animate.css',
+    'resources/assets/canvas/css/magnific-popup.css',
+    'resources/assets/canvas/css/responsive.css'
+], 'public/canvas/css/store.css');
+
+mix.copy([
+    'resources/assets/canvas/js/jquery.js',
+], 'public/canvas/js/jquery.js');
+
+mix.copy([
+    'resources/assets/canvas/js/plugins.js',
+
+], 'public/canvas/js/plugins.js');
+
+mix.copy([
+    'resources/assets/canvas/js/functions.js',
+], 'public/canvas/js/functions.js');
 
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 

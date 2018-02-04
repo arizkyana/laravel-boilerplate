@@ -1,194 +1,72 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html dir="ltr" lang="en-US">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="{{ mix('canvas/css/store.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <!-- External JavaScripts
+    ============================================= -->
+    <script type="text/javascript" src="{{ mix('canvas/js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ mix('canvas/js/plugins.js') }}"></script>
 
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ isset($title) ? config('app.name', 'Laravel') . " | " . $title : config('app.name', 'Laravel') }}</title>
+    <!-- Document Title
+    ============================================= -->
+    <title>Blank Page | Canvas</title>
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    {{--<script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>--}}
 </head>
 
-{{--<body class="mini-navbar">--}}
-<body class="top-navigation">
+<body class="stretched">
 
-<div id="wrapper">
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
 
-    <div id="page-wrapper" class="gray-bg">
-        <div class="row border-bottom white-bg">
-            <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
-                <div class="navbar-header">
-                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse"
-                            class="navbar-toggle collapsed" type="button">
-                        <i class="fa fa-reorder"></i>
-                    </button>
+    <!-- Content
+    ============================================= -->
+    <section id="content">
 
+        <div class="content-wrap">
 
+            <div class="container center clearfix">
+
+                <div class="heading-block center">
+                    <h1>This is a Blank Page</h1>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, ratione?</span>
                 </div>
-                <ul class="nav navbar-top-links navbar-right" style="">
-                    @guest
 
-                        <li>
-                            <a href="{{ route('login') }}" class="active">
-                                Login
-                            </a>
-                        </li>
-                        @else
-                            <li>
-                                <a href="{{ route('dashboard') }}">
-                                    Dashboard
-                                </a>
-                            </li>
-                            <li>
+                <p>Quod aut totam adipisci fugit dolor tempora quasi odit, qui aliquam fuga voluptatibus quas eos earum facilis corporis quibusdam eius! Molestiae dolorum nisi quod aperiam ullam libero qui autem alias laborum totam voluptatibus aliquam commodi nobis ipsum excepturi repellendus nihil labore est possimus magni aliquid, sed culpa ad explicabo! Esse, provident, autem.</p>
 
-                                <a href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    <i class="fa fa-sign-out"></i> Log out
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                            @endguest
+                <a href="index.html" class="btn btn-default topmargin-sm">&lArr; Back to the Demo</a>
 
-                </ul>
-
-            </nav>
-        </div>
-
-
-        <div class="wrapper wrapper-content">
-
-            @yield('content')
-
-        </div>
-        <div class="footer">
-
-            <div>
-                <strong>Copyright</strong> {{ config('app.name', 'Laravel') }} &copy; 2017
             </div>
+
         </div>
 
-    </div>
-</div>
+    </section><!-- #content end -->
 
+</div><!-- #wrapper end -->
 
-<script src="{{ asset('js/themes/jquery-3.1.1.min.js') }}"></script>
-<script src="{{ asset('js/themes/bootstrap.js') }}"></script>
-<script src="{{ asset('js/themes/plugins/metisMenu/jquery.metisMenu.js') }}"></script>
-<script src="{{ asset('js/themes/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
 
-<!-- Flot -->
-<script src="{{ asset('js/themes/plugins/flot/jquery.flot.js') }}"></script>
-<script src="{{ asset('js/themes/plugins/flot/jquery.flot.tooltip.min.js') }}"></script>
-<script src="{{ asset('js/themes/plugins/flot/jquery.flot.spline.js') }}"></script>
-<script src="{{ asset('js/themes/plugins/flot/jquery.flot.resize.js') }}"></script>
-<script src="{{ asset('js/themes/plugins/flot/jquery.flot.pie.js') }}"></script>
+<!-- Footer Scripts
+============================================= -->
+<script type="text/javascript" src="{{ mix('canvas/js/functions.js') }}"></script>
 
-<!-- Peity -->
-<script src="{{ asset('js/themes/plugins/peity/jquery.peity.min.js') }}"></script>
-<script src="{{ asset('js/themes/demo/peity-demo.js') }}"></script>
-
-<!-- Custom and plugin javascript -->
-<script src="{{ asset('js/themes/inspinia.js') }}"></script>
-<script src="{{ asset('js/themes/plugins/pace/pace.min.js') }}"></script>
-
-<!-- jQuery UI -->
-<script src="{{ asset('js/themes/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-
-<!-- GITTER -->
-<script src="{{ asset('js/themes/plugins/gritter/jquery.gritter.min.js') }}"></script>
-
-<!-- Sparkline -->
-<script src="{{ asset('js/themes/plugins/sparkline/jquery.sparkline.min.js') }}"></script>
-
-<!-- Sparkline demo data  -->
-<script src="{{ asset('js/themes/demo/sparkline-demo.js') }}"></script>
-
-
-<!-- Toastr -->
-<script src="{{ asset('js/themes/plugins/toastr/toastr.min.js') }}"></script>
-
-{{--Datatable--}}
-<script src="{{ asset('js/themes/plugins/dataTables/datatables.min.js') }}"></script>
-<script src="{{ asset('js/themes/plugins/datapicker/bootstrap-datepicker.js') }}"></script>
-
-{{--select 2--}}
-<script src="{{ asset('js/themes/plugins/select2/select2.full.min.js')  }}"></script>
-
-{{--Switchery--}}
-<script src="{{ asset('js/themes/plugins/switchery/switchery.js') }}"></script>
-
-
-<!-- Scripts -->
-
-
-<script src="{{ asset('js/app.js') }}"></script>
-
-{{--plugins themes js--}}
-@if (isset($plugins_js))
-    @foreach ($plugins_js as $js)
-        <script src="{{ asset('js/themes/plugins/' . $js) }}"></script>
-    @endforeach
-@endif
-
-{{--gmaps required--}}
-@if (isset($gmaps) && $gmaps)
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACK1BU_M2kIo8xohz0dx5RjNOqDwwUKSE&callback=init"
-            async
-            defer></script>
-    <script>
-
-        function init() {
-            const latitude = Number(-6.2383);
-            const longitude = Number(106.9756);
-
-            var _map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: latitude, lng: longitude},
-                zoom: 12
-            });
-
-
-            window.dashboard.loadmap(_map);
-            window.gmap = _map;
-
-
-        }
-    </script>
-@endif
-
-<script type="text/javascript">
-
-    var base_url =
-            {!! json_encode(url('/')) !!}
-            {{--var asset_url = {{!! json_encode(asset('')) !!}};--}}
-
-    var logError = (e) => {
-            console.log(e);
-            swal({
-                type: 'error',
-                title: e.status,
-                text: e.statusText
-            })
-        };
-
-
-</script>
-
-@if (isset($js))
-    <script src="{{ asset('js/' . $js) }}"></script>
-@endif
 </body>
 </html>
