@@ -91,7 +91,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"/js/bundle","1":"/js/users","2":"/js/notification/setup","3":"/js/apiClient","4":"/js/vendor","5":"/js/role","6":"/js/registrasi","7":"/js/notification/history","8":"/js/menu","9":"/js/dashboard","10":"/js/activity"}[chunkId]||chunkId) + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"\\js\\bundle","1":"\\js\\users","2":"\\js\\notification\\setup","3":"\\js\\apiClient","4":"/js/vendor","5":"\\js\\role","6":"\\js\\registrasi","7":"\\js\\notification\\history","8":"\\js\\menu","9":"\\js\\dashboard","10":"\\js\\activity"}[chunkId]||chunkId) + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
