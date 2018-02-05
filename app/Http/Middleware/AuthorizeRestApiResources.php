@@ -34,7 +34,7 @@ class AuthorizeRestApiResources
 
         $authorize_menu = DB::table('menu')
             ->leftJoin('role_menu', 'role_menu.menu_id', '=', 'menu.id')
-            ->where('role_menu.role_id', $user->role_id)
+            ->where('role_menu.roles_id', $user->roles_id)
             ->where('menu.authorize_url', $resource)
             ->first();
 

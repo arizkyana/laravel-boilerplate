@@ -15454,6 +15454,10 @@ text.highcharts-drilldown-data-label,
   padding: 1em;
 }
 
+.profile-element {
+  text-align: center;
+}
+
 /**
   Inspina Themes
  */

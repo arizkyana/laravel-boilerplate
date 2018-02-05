@@ -3,7 +3,7 @@
 
     function menus($role_id){
         $menus = App\Menu::all();
-        $selected_menus = App\RoleMenu::where('role_id', $role_id)->get();
+        $selected_menus = App\RoleMenu::where('roles_id', $role_id)->orderByRaw('created_at')->get();
 
         $new_menus = [];
         $test = [];
@@ -79,7 +79,7 @@
         }
     }
 
-    $menus = menus(\Illuminate\Support\Facades\Auth::user()->role_id);
+    $menus = menus(\Illuminate\Support\Facades\Auth::user()->roles_id);
 
     foreach ($menus as $menu) {
         print_menu($menu, url()->current());

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableNotificationSetup extends Migration
+class CreateRequestResetPassword extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateTableNotificationSetup extends Migration
      */
     public function up()
     {
-        Schema::create('notification_setup', function (Blueprint $table) {
+        Schema::create('request_password_resets', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('title');
-            $table->longText('body');
-            $table->integer('type')->unsigned(); // 1 - broadcast , 2 - single
-            $table->integer('created_by')->unsigned();
-            $table->boolean('is_visible');
+            $table->string('email');
+            $table->integer('user_id');
+            $table->string('token');
+            $table->boolean('is_reset');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateTableNotificationSetup extends Migration
      */
     public function down()
     {
-        Schema::drop('notification_setup');
+        Schema::drop('request_password_reset');
     }
 }

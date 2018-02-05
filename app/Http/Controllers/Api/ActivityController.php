@@ -35,10 +35,10 @@ class ActivityController extends Controller
         $data = DB::table('activity')
 //            ->where($where)
             ->leftJoin('users', 'users.id', '=', 'activity.id_user')
-            ->leftJoin('role', 'role.id', '=', 'users.role_id')
+            ->leftJoin('roles', 'roles.id', '=', 'users.roles_id')
             ->offset($start)
             ->limit($length)
-            ->select('activity.*', 'users.email as email', 'role.name as role');
+            ->select('activity.*', 'users.email as email', 'roles.name as role');
 
 
         if ($request->query('tanggal_mulai') && $request->query('tanggal_akhir') ) {

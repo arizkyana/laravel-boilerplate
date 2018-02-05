@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableNotificationSetup extends Migration
+class CreateOauthPersonalAccessClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateTableNotificationSetup extends Migration
      */
     public function up()
     {
-        Schema::create('notification_setup', function (Blueprint $table) {
+        Schema::create('oauth_personal_access_clients', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('title');
-            $table->longText('body');
-            $table->integer('type')->unsigned(); // 1 - broadcast , 2 - single
-            $table->integer('created_by')->unsigned();
-            $table->boolean('is_visible');
+            $table->integer('client_id');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateTableNotificationSetup extends Migration
      */
     public function down()
     {
-        Schema::drop('notification_setup');
+        Schema::drop('oauth_personal_access_clients');
     }
 }

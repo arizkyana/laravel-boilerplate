@@ -32,7 +32,7 @@ class RoleController extends MyController
         $user = Auth::user();
 
         $roles = Role::all();
-        if ($user->role_id != 1) $roles = Role::where('id', '!=', '1')->get();
+        if ($user->roles_id != 1) $roles = Role::where('id', '!=', '1')->get();
 
 
 
@@ -90,7 +90,7 @@ class RoleController extends MyController
 
         foreach ($menus as $menu) {
             $role_menu = new RoleMenu();
-            $role_menu->role_id = $role->id;
+            $role_menu->roles_id = $role->id;
             $role_menu->menu_id = $menu;
             $role_menu->save();
         }
@@ -124,7 +124,7 @@ class RoleController extends MyController
 
         $role = Role::find($id);
         $menus = Menu::all();
-        $selected_menus = RoleMenu::where('role_id', $id)->get();
+        $selected_menus = RoleMenu::where('roles_id', $id)->get();
 
         foreach ($menus as $menu) {
             $selected = false;
@@ -171,11 +171,11 @@ class RoleController extends MyController
 
         $menus = $request->input('menus');
 
-        RoleMenu::where('role_id', $request->input('id'))->delete();
+        RoleMenu::where('roles_id', $request->input('id'))->delete();
 
         foreach ($menus as $menu) {
             $role_menu = new RoleMenu();
-            $role_menu->role_id = $role->id;
+            $role_menu->roles_id = $role->id;
             $role_menu->menu_id = $menu;
             $role_menu->save();
         }

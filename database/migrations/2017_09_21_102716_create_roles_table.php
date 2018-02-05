@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMenuTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateMenuTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('roles', function (Blueprint $table) {
+            $table->increments('id')->unsigned();
             $table->string('name');
-            $table->string('url');
-            $table->string('icon');
-            $table->boolean('show');
-            $table->longText('authorize_url')->nullable();
-            $table->integer('parent')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class CreateMenuTable extends Migration
      */
     public function down()
     {
-        Schema::drop('menu');
+        Schema::drop('roles');
     }
 }

@@ -98,14 +98,14 @@
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="jenis_kelamin"
-                                                   value="1" {{ $users->jenis_kelamin === 1 ? 'checked' : '' }} /> Laki
+                                                   value="1" {{ $users->jenis_kelamin == 1 ? 'checked' : '' }} /> Laki
                                             - laki
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="jenis_kelamin"
-                                                   value="0" {{ $users->jenis_kelamin === 0 ? 'checked' : '' }} />
+                                                   value="0" {{ $users->jenis_kelamin == 0 ? 'checked' : '' }} />
                                             Perempuan
                                         </label>
                                     </div>
@@ -204,7 +204,7 @@
                                     <div class="checkbox">
 
                                         <input type="checkbox" class="js-switch" name="is_active"
-                                               {{ $users->is_active === 1 ? 'checked' : '' }} value="1"/> Is Active ?
+                                               {{ $users->is_active == 1 ? 'checked' : '' }} value="1"/> Is Active ?
 
                                     </div>
                                 </div>

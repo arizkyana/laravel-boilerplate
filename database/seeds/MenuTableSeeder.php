@@ -22,31 +22,6 @@ class MenuTableSeeder extends Seeder
                 'show' => TRUE,
             ],
 
-            // penyakit 2
-            [
-                'name' => 'Penyakit',
-                'url' => 'penyakit',
-                'icon' => 'fa fa-file',
-                'parent' => 0,
-                'authorize_url' => 'penyakit',
-                'show' => TRUE
-            ],
-            [
-                'name' => 'Laporan',
-                'url' => 'penyakit/laporan',
-                'icon' => 'fa fa-file',
-                'parent' => 2,
-                'authorize_url' => 'penyakit-laporan',
-                'show' => TRUE
-            ],
-            [
-                'name' => 'Profile',
-                'url' => 'penyakit/Profile',
-                'icon' => 'fa fa-file',
-                'parent' => 2,
-                'authorize_url' => 'penyakit-profile',
-                'show' => TRUE
-            ],
 
             // notification center 5
             [
@@ -61,7 +36,7 @@ class MenuTableSeeder extends Seeder
                 'name' => 'Setup',
                 'url' => 'notification/setup',
                 'icon' => 'fa fa-file',
-                'parent' => 5,
+                'parent' => 2,
                 'authorize_url' => 'notification-setup',
                 'show' => TRUE
             ],
@@ -69,7 +44,7 @@ class MenuTableSeeder extends Seeder
                 'name' => 'History',
                 'url' => 'notification/history',
                 'icon' => 'fa fa-file',
-                'parent' => 5,
+                'parent' => 2,
                 'authorize_url' => 'notification-history',
                 'show' => TRUE
             ],
@@ -87,7 +62,7 @@ class MenuTableSeeder extends Seeder
                 'name' => 'Menu',
                 'url' => 'setting/menu',
                 'icon' => 'fa fa-plus',
-                'parent' => 8,
+                'parent' => 5,
                 'authorize_url' => 'setting-menu',
                 'show' => TRUE
             ],
@@ -98,7 +73,7 @@ class MenuTableSeeder extends Seeder
                 'name' => 'Role',
                 'url' => 'setting/role',
                 'icon' => 'fa fa-circle',
-                'parent' => 8,
+                'parent' => 5,
                 'authorize_url' => 'setting/role',
                 'show' => TRUE
             ],
@@ -109,7 +84,7 @@ class MenuTableSeeder extends Seeder
                 'name' => 'Users',
                 'url' => 'setting/users',
                 'icon' => 'fa fa-user',
-                'parent' => 8,
+                'parent' => 5,
                 'authorize_url' => 'setting/users',
                 'show' => TRUE
             ],

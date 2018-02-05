@@ -33,35 +33,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        // dashboard
-        Gate::define('dashboard', function ($user) {
-            return $this->authorize_menu($user, 'dashboard');
-        });
-
-        // penyakit
-        Gate::define('penyakit-laporan', function($user){
-            return $this->authorize_menu($user, 'penyakit-laporan');
-        });
-        Gate::define('penyakit-laporan-show', function($user){
-            return $this->authorize_menu($user, 'penyakit-laporan-show');
-        });
-
-
         Passport::routes();
 
     }
 
-    private function authorize_menu($user, $resource)
-    {
 
-        if ($user->isSuperAdmin()) return true;
-
-        $authorize_menu = DB::table('menu')
-            ->leftJoin('role_menu', 'role_menu.menu_id', '=', 'menu.id')
-            ->where('role_menu.role_id', $user->role_id)
-            ->where('menu.authorize_url', $resource)
-            ->get();
-        return count($authorize_menu) == 1;
-    }
 
 }

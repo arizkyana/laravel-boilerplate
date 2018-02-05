@@ -20,6 +20,7 @@ Route::get('/registrasi', 'RegistrasiController@index')->name('registrasi');
 Route::post('/store', 'RegistrasiController@store')->name('store');
 Route::get('/reset_password', 'RegistrasiController@reset_password')->name('reset_password');
 Route::post('/store_reset_password', 'RegistrasiController@store_reset_password')->name('store_reset_password');
+Route::post('/request_reset_password', 'RegistrasiController@request_reset_password')->name('request_reset_password');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard')->middleware('can:dashboard');

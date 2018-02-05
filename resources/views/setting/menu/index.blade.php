@@ -41,7 +41,7 @@
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>
-                            <a href="{{ route('menu/edit', $menu)  }}" class="text-primary">
+                            <a href="{{ route('menu/edit', $menu)  }}" class="text-danger">
                                 {{ $menu->name }}
                             </a>
                         </td>

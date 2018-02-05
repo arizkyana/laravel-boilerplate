@@ -6,6 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
 
+
+
 class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
@@ -16,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role_id'
+        'name', 'email', 'password', 'roles_id'
     ];
 
     /**
@@ -29,7 +31,7 @@ class User extends Authenticatable
     ];
 
     public function isSuperAdmin(){
-        return $this->attributes['role_id'] == $this->SUPER_ADMIN_ROLE_ID;
+        return $this->attributes['roles_id'] == $this->SUPER_ADMIN_ROLE_ID;
     }
 
     public function role(){

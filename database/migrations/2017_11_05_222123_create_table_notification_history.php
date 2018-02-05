@@ -30,6 +30,6 @@ class CreateTableNotificationHistory extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notification_history');
+        Schema::drop('notification_history');
     }
 }

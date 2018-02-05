@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use PhpParser\Node\Stmt\Return_;
 use Validator;
 
 class UsersController extends MyController
@@ -27,12 +28,13 @@ class UsersController extends MyController
      */
     public function index(Request $request)
     {
-        $users = User::orderByDesc('created_at')->get();
+        $users = User::orderByRaw('created_at')->get();
 
         foreach ($users as $user) :
-            $role = Role::find($user->role_id);
+            $role = Role::find($user->roles_id);
             $user->role = $role;
         endforeach;
+
 
         return view('setting/users/index')->with([
             'users' => $users,
@@ -86,7 +88,7 @@ class UsersController extends MyController
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        $user->role_id = $request->input('role');
+        $user->roles_id = $request->input('role');
         $user->nik = $request->input('nik');
         $user->jenis_kelamin = $request->input('jenis_kelamin');
 
@@ -131,9 +133,7 @@ class UsersController extends MyController
             $apiClient->secret = '';
         } else {
             $apiClient = $apiClient[0];
-//            return 'ada api';
         }
-
 
 
         return view('setting/users/edit')->with([
@@ -176,7 +176,7 @@ class UsersController extends MyController
         $_user->name = $request->input('name');
         $_user->email = $request->input('email') ? $request->input('email') : $_user->email;
         $_user->password = bcrypt($request->input('password'));
-        $_user->role_id = $request->input('role');
+        $_user->roles_id = $request->input('role');
         $_user->nik = $request->input('nik');
         $_user->jenis_kelamin = $request->input('jenis_kelamin');
 

@@ -164,8 +164,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        // Passport
-        Laravel\Passport\PassportServiceProvider::class,
+//        // Passport
+//        Laravel\Passport\PassportServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -181,7 +181,10 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         // Intervention Image
-        Intervention\Image\ImageServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class,
+
+        // Oracle
+        Yajra\Oci8\Oci8ServiceProvider::class
 
     ],
 

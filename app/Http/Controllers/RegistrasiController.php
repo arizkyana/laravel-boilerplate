@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\KetuaWarga;
 use App\Petugas;
+use App\RequestResetPassword;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
@@ -102,6 +103,31 @@ class RegistrasiController extends Controller
 
         $user->password = bcrypt($request->input('password'));
         $user->save();
+
+        return redirect('reset_password')->with('success', 'Berhasil Reset Password');
+    }
+
+    public function request_reset_password(Request $request){
+        $messages = [
+            'exists' => ':attribute tidak terdaftar.',
+        ];
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|exists:users,email',
+        ], $messages);
+
+        if ($validator->fails()) {
+            return redirect('reset_password')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $user = User::where('email', $request->input('email'))->first();
+
+        $req_reset_password = new RequestResetPassword();
+        $req_reset_password->email = $user->email;
+        $req_reset_password->user_id = $user->id;
+        $req_reset_password->token = bcrypt(base64_decode('YmdHis-request-reset-password'));
+        $req_reset_password->save();
 
         return redirect('reset_password')->with('success', 'Berhasil Reset Password');
     }

@@ -22,7 +22,7 @@
 </head>
 
 {{--<body class="mini-navbar">--}}
-<body class="">
+<body class="skin-1 fixed-sidebar fixed-nav fixed-nav-basic">
 
 @guest
     @yield('content')
@@ -37,12 +37,12 @@
                         <li class="nav-header">
                             <div class="dropdown profile-element"> <span>
                             <img alt="image" class="img-circle"
-                                 src="{{ asset('images/profile_small.jpg') }}"/>
+                                 src="{{ asset('images/jasamarga-logo-400.png') }}" width="40"/>
                              </span>
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong
                                             class="font-bold">{{ \Illuminate\Support\Facades\Auth::user()->name }}</strong>
-                             </span> <span class="text-muted text-xs block">{{ \Illuminate\Support\Facades\Auth::user()->role->name}}
+                             </span> <span class="text-muted text-xs block">{{ \Illuminate\Support\Facades\Auth::user()->email }}
                                     <b
                                             class="caret"></b></span> </span> </a>
                                 <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -76,7 +76,7 @@
 
             <div id="page-wrapper" class="gray-bg">
                 <div class="row border-bottom">
-                    <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
+                    <nav class="navbar navbar-fixed-top" role="navigation" >
                         <div class="navbar-header">
                             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
                                         class="fa fa-bars"></i>
@@ -150,7 +150,7 @@
                 <div class="footer">
 
                     <div>
-                        <strong>Copyright</strong> {{ config('app.name', 'Laravel') }} &copy; 2017
+                        <strong>Copyright</strong> {{ config('app.name', 'Laravel') }} &copy; {{ date('Y') }}
                     </div>
                 </div>
 

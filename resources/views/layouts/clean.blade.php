@@ -18,7 +18,7 @@
 </head>
 
 {{--<body class="mini-navbar">--}}
-<body class="top-navigation">
+<body class="top-navigation skin-1">
 
 <div id="wrapper">
 
@@ -75,7 +75,7 @@
         <div class="footer">
 
             <div>
-                <strong>Copyright</strong> {{ config('app.name', 'Laravel') }} &copy; 2017
+                <strong>Copyright</strong> {{ config('app.name', 'Laravel') }} &copy; {{ date('Y') }}
             </div>
         </div>
 

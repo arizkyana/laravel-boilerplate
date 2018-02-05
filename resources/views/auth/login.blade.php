@@ -3,8 +3,8 @@
 @section('content')
     <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
-            <div>
-
+            <div >
+                <img src="{{ asset('images/jasamarga-logo-400.png') }}" alt="jasamarga-logo-400" class="img-responsive center-block" width="150" />
 
             </div>
 
@@ -27,17 +27,12 @@
                     @endif
                 </div>
                 <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
-
                 <a href="{{ route('reset_password') }}">
                     <small>Lupa Password?</small>
                 </a>
-                <p class="text-muted text-center">
-                    <small>Belum Punya Akun?</small>
-                </p>
-                <a class="btn btn-sm btn-white btn-block" href="{{ route('registrasi') }}">Daftar Akun</a>
             </form>
             <p class="m-t">
-                <small>{{ config('app.name', 'Laravel') }} &copy; 2018</small>
+                <small>{{ config('app.name', 'Laravel') }} &copy; {{ date('Y') }}</small>
             </p>
         </div>
     </div>
